@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://itachizhu.github.io/post/tian/</loc>
+    <lastmod>2018-11-15T14:52:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://itachizhu.github.io/post/hugo/</loc>
+    <lastmod>2018-11-15T10:02:06+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://itachizhu.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://itachizhu.github.io/</loc>
+    <lastmod>2018-11-15T14:52:50+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://itachizhu.github.io/post/</loc>
+    <lastmod>2018-11-15T14:52:50+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://itachizhu.github.io/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

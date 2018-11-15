@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>使用Hugo搭建个人博客 - Golden Mountain</title>
+  <meta property="og:title" content="使用Hugo搭建个人博客" />
+  <meta name="twitter:title" content="使用Hugo搭建个人博客" />
+  <meta name="description" content="网络上已经有很多这样的教程了，为什么我还要自己写一个呢？原因有二：
+ 犯贱，因为由于版本和系统的不同，我在追新的同时就免不了踩很多的坑，而再踩坑之后会让我很不爽，于是我就跟它硬刚，刚完之后遍体鳞伤之余我便记录了下来。 虽然不知道什么时候开始，莫名地喜欢写代码了，也喜欢自己一个静静地想一些技术性的问题，但其实我的骨子里就是一个网络写手，我还曾经不止一次地梦想过有那么一天，我写了一部网络小说，然后，火了。所以在这里慢慢完善的同时我是想记录一些自己喜欢的诗人，作家的文章。  所以，我搭建了这么一个类似博客那样的东西，与技术无关不接受吐槽放着那些我的随笔和我喜欢的文章。当我有这样的想法的时候，我本身又不太喜欢网络上那些繁杂而不自由的东西，于是我在找寻和丰富自己技术之余有了这个东东。
+创建账户，设置页面服务 要么说为什么我是那样崇拜linux的创始人Linus Torvalds呢？他一直是我心目中最高级别的神并且没有之一。出自他手的所有东西都是神器。而今天我们要使用的就是他创造的神器之一Github Pages。
+首先我们在我们的github账户中创建一个repository，然后命名成&lt;&lt;您的账户名&gt;&gt;.github.io（如果系统提示不让这样创建就先随便命名一个，后面可以改的）。
+然后到资源库链接中点击Settings，进入设置界面，搜索&rdquo;Github Pages&rdquo;到相关设置的地方，选择对应的分支版本，点击Save即可。此时不要点击对应的链接，因为没有内容肯定是404页面的。
+最后需要在对应的repository下面的根路径中创建index.html文件，输入:
+&lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot; itemscope itemtype=&quot;http://schema.org/WebPage&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;utf-8&quot; /&gt; &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0&quot;&gt; &lt;title&gt;Golden Mountain - Golden Mountain&lt;/title&gt; &lt;/head&gt; &lt;body&gt;Hello World!&lt;/body&gt; &lt;/html&gt;  此时你再访问之前设置的地址如：https://itachizhu.github.io/的话，应该对应的demo页面就出来了：
+使用hugo 安装hugo 安装hugo很简单，到下载页面去下载对应的系统可执行包即可hugo的github页面，当然如果你使用的是mac系统，而且安装了brew的话，那么恭喜你，你可以使用一条简单的命令即可完成安装：
+$ brew install hugo  使用hugo创建网站 首先建立自己的站点，这里命名为quickstart
+$ hugo new site quickstart  然后进入该路径
+$ cd quickstart  该目录下你可以看到以下几个目录和config.toml文件
+▸ archetypes ▸ content ▸ data ▸ layouts ▸ resources ▸ static ▸ themes config.">
+  <meta property="og:description" content="网络上已经有很多这样的教程了，为什么我还要自己写一个呢？原因有二：
+ 犯贱，因为由于版本和系统的不同，我在追新的同时就免不了踩很多的坑，而再踩坑之后会让我很不爽，于是我就跟它硬刚，刚完之后遍体鳞伤之余我便记录了下来。 虽然不知道什么时候开始，莫名地喜欢写代码了，也喜欢自己一个静静地想一些技术性的问题，但其实我的骨子里就是一个网络写手，我还曾经不止一次地梦想过有那么一天，我写了一部网络小说，然后，火了。所以在这里慢慢完善的同时我是想记录一些自己喜欢的诗人，作家的文章。  所以，我搭建了这么一个类似博客那样的东西，与技术无关不接受吐槽放着那些我的随笔和我喜欢的文章。当我有这样的想法的时候，我本身又不太喜欢网络上那些繁杂而不自由的东西，于是我在找寻和丰富自己技术之余有了这个东东。
+创建账户，设置页面服务 要么说为什么我是那样崇拜linux的创始人Linus Torvalds呢？他一直是我心目中最高级别的神并且没有之一。出自他手的所有东西都是神器。而今天我们要使用的就是他创造的神器之一Github Pages。
+首先我们在我们的github账户中创建一个repository，然后命名成&lt;&lt;您的账户名&gt;&gt;.github.io（如果系统提示不让这样创建就先随便命名一个，后面可以改的）。
+然后到资源库链接中点击Settings，进入设置界面，搜索&rdquo;Github Pages&rdquo;到相关设置的地方，选择对应的分支版本，点击Save即可。此时不要点击对应的链接，因为没有内容肯定是404页面的。
+最后需要在对应的repository下面的根路径中创建index.html文件，输入:
+&lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot; itemscope itemtype=&quot;http://schema.org/WebPage&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;utf-8&quot; /&gt; &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0&quot;&gt; &lt;title&gt;Golden Mountain - Golden Mountain&lt;/title&gt; &lt;/head&gt; &lt;body&gt;Hello World!&lt;/body&gt; &lt;/html&gt;  此时你再访问之前设置的地址如：https://itachizhu.github.io/的话，应该对应的demo页面就出来了：
+使用hugo 安装hugo 安装hugo很简单，到下载页面去下载对应的系统可执行包即可hugo的github页面，当然如果你使用的是mac系统，而且安装了brew的话，那么恭喜你，你可以使用一条简单的命令即可完成安装：
+$ brew install hugo  使用hugo创建网站 首先建立自己的站点，这里命名为quickstart
+$ hugo new site quickstart  然后进入该路径
+$ cd quickstart  该目录下你可以看到以下几个目录和config.toml文件
+▸ archetypes ▸ content ▸ data ▸ layouts ▸ resources ▸ static ▸ themes config.">
+  <meta name="twitter:description" content="网络上已经有很多这样的教程了，为什么我还要自己写一个呢？原因有二：
+ 犯贱，因为由于版本和系统的不同，我在追新的同时就免不了踩很多的坑，而再踩坑之后会让我很不爽，于是我就跟它硬刚，刚完之后遍体鳞伤之余我便记录了下来。 虽然不知道什么时候开始，莫名地喜欢写代码了，也喜欢自己一个静静地想一些技术性的问题，但其实我的骨子里就是一个网络写手，我还曾经不止一次地梦想过有那么一天，我写了一部网络小说，然后，火 …"><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Golden Mountain",
+    
+    "url": "https://itachizhu.github.io/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https://itachizhu.github.io/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https://itachizhu.github.io/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https://itachizhu.github.io/post/hugo/",
+          "name": "使用 hugo搭建个人博客"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "itachizhu"
+  },
+  "headline": "使用Hugo搭建个人博客",
+  "description" : "网络上已经有很多这样的教程了，为什么我还要自己写一个呢？原因有二：
+ 犯贱，因为由于版本和系统的不同，我在追新的同时就免不了踩很多的坑，而再踩坑之后会让我很不爽，于是我就跟它硬刚，刚完之后遍体鳞伤之余我便记录了下来。 虽然不知道什么时候开始，莫名地喜欢写代码了，也喜欢自己一个静静地想一些技术性的问题，但其实我的骨子里就是一个网络写手，我还曾经不止一次地梦想过有那么一天，我写了一部网络小说，然后，火了。所以在这里慢慢完善的同时我是想记录一些自己喜欢的诗人，作家的文章。  所以，我搭建了这么一个类似博客那样的东西，与技术无关不接受吐槽放着那些我的随笔和我喜欢的文章。当我有这样的想法的时候，我本身又不太喜欢网络上那些繁杂而不自由的东西，于是我在找寻和丰富自己技术之余有了这个东东。
+创建账户，设置页面服务 要么说为什么我是那样崇拜linux的创始人Linus Torvalds呢？他一直是我心目中最高级别的神并且没有之一。出自他手的所有东西都是神器。而今天我们要使用的就是他创造的神器之一Github Pages。
+首先我们在我们的github账户中创建一个repository，然后命名成&amp;lt;&amp;lt;您的账户名&amp;gt;&amp;gt;.github.io（如果系统提示不让这样创建就先随便命名一个，后面可以改的）。
+然后到资源库链接中点击Settings，进入设置界面，搜索&amp;rdquo;Github Pages&amp;rdquo;到相关设置的地方，选择对应的分支版本，点击Save即可。此时不要点击对应的链接，因为没有内容肯定是404页面的。
+最后需要在对应的repository下面的根路径中创建index.html文件，输入:
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot; itemscope itemtype=&amp;quot;http://schema.org/WebPage&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot; /&amp;gt; &amp;lt;meta http-equiv=&amp;quot;X-UA-Compatible&amp;quot; content=&amp;quot;IE=edge&amp;quot;&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0, maximum-scale=1.0&amp;quot;&amp;gt; &amp;lt;title&amp;gt;Golden Mountain - Golden Mountain&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt;Hello World!&amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;  此时你再访问之前设置的地址如：https://itachizhu.github.io/的话，应该对应的demo页面就出来了：
+使用hugo 安装hugo 安装hugo很简单，到下载页面去下载对应的系统可执行包即可hugo的github页面，当然如果你使用的是mac系统，而且安装了brew的话，那么恭喜你，你可以使用一条简单的命令即可完成安装：
+$ brew install hugo  使用hugo创建网站 首先建立自己的站点，这里命名为quickstart
+$ hugo new site quickstart  然后进入该路径
+$ cd quickstart  该目录下你可以看到以下几个目录和config.toml文件
+▸ archetypes ▸ content ▸ data ▸ layouts ▸ resources ▸ static ▸ themes config.",
+  "inLanguage" : "en",
+  "wordCount": 132,
+  "datePublished" : "2018-11-15T10:02:06",
+  "dateModified" : "2018-11-15T10:02:06",
+  "image" : "https://itachizhu.github.io/",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "https://itachizhu.github.io/post/hugo/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https://itachizhu.github.io/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https://itachizhu.github.io/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="使用Hugo搭建个人博客" />
+<meta property="og:description" content="网络上已经有很多这样的教程了，为什么我还要自己写一个呢？原因有二：
+ 犯贱，因为由于版本和系统的不同，我在追新的同时就免不了踩很多的坑，而再踩坑之后会让我很不爽，于是我就跟它硬刚，刚完之后遍体鳞伤之余我便记录了下来。 虽然不知道什么时候开始，莫名地喜欢写代码了，也喜欢自己一个静静地想一些技术性的问题，但其实我的骨子里就是一个网络写手，我还曾经不止一次地梦想过有那么一天，我写了一部网络小说，然后，火了。所以在这里慢慢完善的同时我是想记录一些自己喜欢的诗人，作家的文章。  所以，我搭建了这么一个类似博客那样的东西，与技术无关不接受吐槽放着那些我的随笔和我喜欢的文章。当我有这样的想法的时候，我本身又不太喜欢网络上那些繁杂而不自由的东西，于是我在找寻和丰富自己技术之余有了这个东东。
+创建账户，设置页面服务 要么说为什么我是那样崇拜linux的创始人Linus Torvalds呢？他一直是我心目中最高级别的神并且没有之一。出自他手的所有东西都是神器。而今天我们要使用的就是他创造的神器之一Github Pages。
+首先我们在我们的github账户中创建一个repository，然后命名成&lt;&lt;您的账户名&gt;&gt;.github.io（如果系统提示不让这样创建就先随便命名一个，后面可以改的）。
+然后到资源库链接中点击Settings，进入设置界面，搜索&rdquo;Github Pages&rdquo;到相关设置的地方，选择对应的分支版本，点击Save即可。此时不要点击对应的链接，因为没有内容肯定是404页面的。
+最后需要在对应的repository下面的根路径中创建index.html文件，输入:
+&lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot; itemscope itemtype=&quot;http://schema.org/WebPage&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;utf-8&quot; /&gt; &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0&quot;&gt; &lt;title&gt;Golden Mountain - Golden Mountain&lt;/title&gt; &lt;/head&gt; &lt;body&gt;Hello World!&lt;/body&gt; &lt;/html&gt;  此时你再访问之前设置的地址如：https://itachizhu.github.io/的话，应该对应的demo页面就出来了：
+使用hugo 安装hugo 安装hugo很简单，到下载页面去下载对应的系统可执行包即可hugo的github页面，当然如果你使用的是mac系统，而且安装了brew的话，那么恭喜你，你可以使用一条简单的命令即可完成安装：
+$ brew install hugo  使用hugo创建网站 首先建立自己的站点，这里命名为quickstart
+$ hugo new site quickstart  然后进入该路径
+$ cd quickstart  该目录下你可以看到以下几个目录和config.toml文件
+▸ archetypes ▸ content ▸ data ▸ layouts ▸ resources ▸ static ▸ themes config.">
+<meta property="og:url" content="https://itachizhu.github.io/post/hugo/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Golden Mountain" />
+  <meta name="twitter:title" content="使用Hugo搭建个人博客" />
+  <meta name="twitter:description" content="网络上已经有很多这样的教程了，为什么我还要自己写一个呢？原因有二：
+ 犯贱，因为由于版本和系统的不同，我在追新的同时就免不了踩很多的坑，而再踩坑之后会让我很不爽，于是我就跟它硬刚，刚完之后遍体鳞伤之余我便记录了下来。 虽然不知道什么时候开始，莫名地喜欢写代码了，也喜欢自己一个静静地想一些技术性的问题，但其实我的骨子里就是一个网络写手，我还曾经不止一次地梦想过有那么一天，我写了一部网络小说，然后，火 …">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://itachizhu.github.io/post/hugo/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Golden Mountain" />
+
+  <meta name="generator" content="Hugo 0.51" />
+  <link rel="alternate" href="https://itachizhu.github.io/index.xml" type="application/rss+xml" title="Golden Mountain">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://itachizhu.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://itachizhu.github.io/css/syntax.css" /><link rel="stylesheet" href="https://itachizhu.github.io/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://itachizhu.github.io/">Golden Mountain</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>使用Hugo搭建个人博客</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on November 15, 2018
+  
+  
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;itachizhu
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>网络上已经有很多这样的教程了，为什么我还要自己写一个呢？原因有二：</p>
+
+<ol>
+<li>犯贱，因为由于版本和系统的不同，我在追新的同时就免不了踩很多的坑，而再踩坑之后会让我很不爽，于是我就跟它硬刚，刚完之后遍体鳞伤之余我便记录了下来。</li>
+<li>虽然不知道什么时候开始，莫名地喜欢写代码了，也喜欢自己一个静静地想一些技术性的问题，但其实我的骨子里就是一个网络写手，我还曾经不止一次地梦想过有那么一天，我写了一部网络小说，然后，火了。所以在这里慢慢完善的同时我是想记录一些自己喜欢的诗人，作家的文章。</li>
+</ol>
+
+<p>所以，我搭建了这么一个类似博客那样的东西，与技术无关不接受吐槽放着那些我的随笔和我喜欢的文章。当我有这样的想法的时候，我本身又不太喜欢网络上那些繁杂而不自由的东西，于是我在找寻和丰富自己技术之余有了这个东东。</p>
+
+<h3 id="创建账户-设置页面服务">创建账户，设置页面服务</h3>
+
+<p>要么说为什么我是那样崇拜<strong>linux</strong>的创始人<strong>Linus Torvalds</strong>呢？他一直是我心目中最高级别的神并且没有之一。出自他手的所有东西都是神器。而今天我们要使用的就是他创造的神器之一<a href="https://pages.github.com/"><em>Github Pages</em></a>。</p>
+
+<p>首先我们在我们的github账户中创建一个repository，然后命名成&lt;&lt;您的账户名&gt;&gt;.github.io（如果系统提示不让这样创建就先随便命名一个，后面可以改的）。</p>
+
+<p>然后到资源库链接中点击Settings，进入设置界面，搜索&rdquo;Github Pages&rdquo;到相关设置的地方，选择对应的分支版本，点击Save即可。此时不要点击对应的链接，因为没有内容肯定是404页面的。</p>
+
+<p><img src="/img/github-pages.png" alt="github-pages" /></p>
+
+<p>最后需要在对应的repository下面的根路径中创建index.html文件，输入:</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot; itemscope itemtype=&quot;http://schema.org/WebPage&quot;&gt;
+  &lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot; /&gt;
+  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0&quot;&gt;
+  &lt;title&gt;Golden Mountain - Golden Mountain&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;Hello World!&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>此时你再访问之前设置的地址如：<a href="https://itachizhu.github.io/的话，应该对应的demo页面就出来了：">https://itachizhu.github.io/的话，应该对应的demo页面就出来了：</a></p>
+
+<p><img src="/img/index.png" alt="index" /></p>
+
+<h3 id="使用hugo">使用hugo</h3>
+
+<h5 id="安装hugo">安装hugo</h5>
+
+<p>安装hugo很简单，到下载页面去下载对应的系统可执行包即可<a href="https://github.com/gohugoio/hugo/releases">hugo的github页面</a>，当然如果你使用的是mac系统，而且安装了brew的话，那么恭喜你，你可以使用一条简单的命令即可完成安装：</p>
+
+<pre><code>$ brew install hugo
+</code></pre>
+
+<h5 id="使用hugo创建网站">使用hugo创建网站</h5>
+
+<p>首先建立自己的站点，这里命名为quickstart</p>
+
+<pre><code>$ hugo new site quickstart
+</code></pre>
+
+<p>然后进入该路径</p>
+
+<pre><code>$ cd quickstart
+</code></pre>
+
+<p>该目录下你可以看到以下几个目录和config.toml文件</p>
+
+<pre><code>▸ archetypes
+▸ content
+▸ data
+▸ layouts
+▸ resources
+▸ static
+▸ themes
+config.toml
+</code></pre>
+
+<p>config.toml是网站的配置文件，包括baseurl，title，copyright等等网站参数。</p>
+
+<p>这几个文件夹的作用分别是：</p>
+
+<ul>
+<li>archetypes：包括内容类型，在创建新内容时自动生成内容的配置</li>
+<li>content：包括网站内容，全部使用markdown格式</li>
+<li>data：存放数据和一些扩展配置，比如json文件</li>
+<li>layouts：包括了网站默认模板，决定了网站默认的内容呈现方式</li>
+<li>resources：资源目录</li>
+<li>static：包括了css，js，fonts，media等，决定网站默认的外观</li>
+<li>themes：存放主题皮肤，网上有很多牛人和爱好者提供了各种好看的主题，下载的主题都放在这里面，而主题子文件里面的目录结构以外层的基本一致</li>
+</ul>
+
+<h5 id="编辑配置文件">编辑配置文件</h5>
+
+<p>我们稍微按照自己的需要将config.toml编辑一下：</p>
+
+<pre><code>baseURL = &quot;https://itachizhu.github.io/&quot;
+languageCode = &quot;zh-cn&quot;
+title = &quot;Golden Mountain&quot;
+[params]
+  author = &quot;itachizhu&quot;
+  subtitle = &quot;这是一个码农Itachi的私人空间。&quot;
+</code></pre>
+
+<h5 id="安装themes">安装Themes</h5>
+
+<p>使用git命令安装，实在因为网络等问题不行的画，可以自行创建文件夹然后把里面的东西复制进去。</p>
+
+<pre><code>$ cd themes
+$ git clone https://github.com/halogenica/beautifulhugo.git
+</code></pre>
+
+<h5 id="新增文章">新增文章</h5>
+
+<pre><code>$ hugo new posts/hugo.md
+</code></pre>
+
+<p>然后就是像我写这篇文章那样把这些内容写进去就行了。</p>
+
+<h5 id="预览">预览</h5>
+
+<p>使用命令(在quickstart目录)：</p>
+
+<pre><code>$ hugo server --theme=beautifulhugo
+</code></pre>
+
+<p>然后访问<a href="http://localhost:1313即可看到效果。">http://localhost:1313即可看到效果。</a></p>
+
+<h5 id="打包">打包</h5>
+
+<p>使用命令(打包前将public目录清空)：</p>
+
+<pre><code>$ hugo --theme=beautifulhugo
+</code></pre>
+
+<h5 id="发布">发布</h5>
+
+<p>将public目录里的所有文件上传到上面的github repository中去即可。当然可以使用git命令。</p>
+
+
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+          
+            <li class="next">
+              <a href="https://itachizhu.github.io/post/tian/" data-toggle="tooltip" data-placement="top" title="甜">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2018
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://itachizhu.github.io/">Golden Mountain</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.51</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://itachizhu.github.io/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://itachizhu.github.io/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>
+
