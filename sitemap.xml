@@ -3,8 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://itachizhu.github.io/post/authors/</loc>
-    <lastmod>2018-11-15T16:15:50+08:00</lastmod>
+    <loc>https://itachizhu.github.io/post/never-bye/</loc>
+    <lastmod>2018-11-15T22:04:42+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://itachizhu.github.io/</loc>
+    <lastmod>2018-11-15T18:03:10+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://itachizhu.github.io/post/qingchun/</loc>
+    <lastmod>2018-11-15T16:48:39+08:00</lastmod>
   </url>
   
   <url>
@@ -24,18 +34,12 @@
   
   <url>
     <loc>https://itachizhu.github.io/post/</loc>
-    <lastmod>2018-11-15T16:15:50+08:00</lastmod>
+    <lastmod>2018-11-15T22:04:42+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://itachizhu.github.io/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://itachizhu.github.io/</loc>
-    <lastmod>2018-11-15T16:15:50+08:00</lastmod>
     <priority>0</priority>
   </url>
   
