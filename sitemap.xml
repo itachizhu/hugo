@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://itachizhu.github.io/post/football/</loc>
+    <lastmod>2018-11-17T20:36:15+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://itachizhu.github.io/post/monster/</loc>
     <lastmod>2018-11-16T22:25:58+08:00</lastmod>
   </url>
@@ -69,7 +74,7 @@
   
   <url>
     <loc>https://itachizhu.github.io/post/</loc>
-    <lastmod>2018-11-16T22:25:58+08:00</lastmod>
+    <lastmod>2018-11-17T20:36:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
