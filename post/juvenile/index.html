@@ -426,6 +426,22 @@
       
 
       
+      <div id="git-comments"></div>
+      <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+      <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+      <script>
+        var gitment = new Gitment({
+          id: 'juvenile',  
+          owner: 'itachizhu',
+          repo: 'itachizhu.github.io',
+          oauth: {
+            client_id: 'bbcf5b6e2798ea007bc6',
+            client_secret: '0b87bc20570cd127ccf4f560e72dd4c7215fd946',
+          }
+        })
+        gitment.render('git-comments')
+      </script>
+      
     </div>
   </div>
 </div>

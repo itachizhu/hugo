@@ -90,7 +90,7 @@
   "@context": "http://schema.org",
   "@type": "Article",
   "author": {
-    "name" : "青木"
+    "name" : "縡茵"
   },
   "headline": "这段时光....",
   "description" : "&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;最近总想写下点什么，只是一直没有付诸行动，空有着这种想法。没有原因的，觉得，应该是现在的&amp;hellip;..现在写，或许是最适合不过了。
@@ -283,7 +283,7 @@
   
   
   
-    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;青木
+    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;縡茵
   
   
 </span>
@@ -363,6 +363,22 @@
 
       
 
+      
+      <div id="git-comments"></div>
+      <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+      <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+      <script>
+        var gitment = new Gitment({
+          id: 'times',  
+          owner: 'itachizhu',
+          repo: 'itachizhu.github.io',
+          oauth: {
+            client_id: 'bbcf5b6e2798ea007bc6',
+            client_secret: '0b87bc20570cd127ccf4f560e72dd4c7215fd946',
+          }
+        })
+        gitment.render('git-comments')
+      </script>
       
     </div>
   </div>

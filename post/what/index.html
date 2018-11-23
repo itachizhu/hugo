@@ -92,7 +92,7 @@
   "@context": "http://schema.org",
   "@type": "Article",
   "author": {
-    "name" : "青木"
+    "name" : "縡茵"
   },
   "headline": "最终留下了什么",
   "description" : "&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;很久不曾提笔写下些什么，我总借口于工作忙碌，其实或许，只是由于自己日渐慵懒。
@@ -287,7 +287,7 @@
   
   
   
-    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;青木
+    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;縡茵
   
   
 </span>
@@ -372,6 +372,22 @@
 
       
 
+      
+      <div id="git-comments"></div>
+      <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+      <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+      <script>
+        var gitment = new Gitment({
+          id: 'what',  
+          owner: 'itachizhu',
+          repo: 'itachizhu.github.io',
+          oauth: {
+            client_id: 'bbcf5b6e2798ea007bc6',
+            client_secret: '0b87bc20570cd127ccf4f560e72dd4c7215fd946',
+          }
+        })
+        gitment.render('git-comments')
+      </script>
       
     </div>
   </div>
